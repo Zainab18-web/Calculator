@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./styles.css"> 
+</head>
+
+<body>
+
+    <h1>Calculator</h1>
+    
+    <form onsubmit="doSum(); return false">
+        <h2>Sum (+)</h2>
+        
+        <label for="addNum1">num1:</label> 
+        <input type="number" id="addNum1" name="add_number_1" placeholder="Enter first number">
+        <br>
+        
+        <label for="addNum2">num2:</label>
+        <input type="number" id="addNum2" name="add_number_2" placeholder="Enter second number">
+        <br>
+        
+        <button type="submit">Proceed</button>
+        <h3 id="addResult" class="result"></h3>
+    </form>
+
+    <hr>
+
+    <form onsubmit="doSubtract(); return false">
+        <h2>Subtract (-)</h2>
+        
+        <label for="subNum1">num1:</label>
+        <input type="number" id="subNum1" name="sub_number_1" placeholder="Enter first number">
+        <br>
+        
+        <label for="subNum2">num2:</label>
+        <input type="number" id="subNum2" name="sub_number_2" placeholder="Enter second number">
+        <br>
+        
+        <button type="submit">Proceed</button>
+        <h3 id="subResult" class="result"></h3>
+    </form>
+    
+    <hr>
+
+    <form onsubmit="doMultiply(); return false">
+        <h2>Multiply (*)</h2>
+        
+        <label for="mulNum1">num1:</label>
+        <input type="number" id="mulNum1" name="mul_number_1" placeholder="Enter first number">
+        <br>
+        
+        <label for="mulNum2">num2:</label>
+        <input type="number" id="mulNum2" name="mul_number_2" placeholder="Enter second number">
+        <br>
+        
+        <button type="submit">Proceed</button>
+        <h3 id="mulResult" class="result"></h3>
+    </form>
+
+    <hr>
+
+    <form onsubmit="doDivide(); return false">
+        <h2>Division (/)</h2>
+        
+        <label for="divNum1">num1:</label>
+        <input type="number" id="divNum1" name="div_number_1" placeholder="Enter first number">
+        <br>
+        
+        <label for="divNum2">num2:</label>
+        <input type="number" id="divNum2" name="div_number_2" placeholder="Enter second number">
+        <br>
+        
+        <button type="submit">Proceed</button>
+        <h3 id="divResult" class="result"></h3>
+    </form>
+
+    <script >
+    // ===== WELCOME ALERT =====
+    function welcomeUser() {
+        alert("Hi Everyone! My Name Is Zainab Sultan. Welcome To My Website ✨");
+    }
+
+    welcomeUser();
+
+    // ===== SUM =====
+    function doSum() {
+        let num1 = document.getElementById("addNum1").value;
+        let num2 = document.getElementById("addNum2").value;
+
+        let sum = Number(num1) + Number(num2);
+
+        console.log("Sum:", sum);
+        document.getElementById("addResult").innerText = "Sum is: " + sum;
+    }
+
+    // ===== SUBTRACT =====
+    function doSubtract() {
+        let num1 = document.getElementById("subNum1").value;
+        let num2 = document.getElementById("subNum2").value;
+
+        let difference = Number(num1) - Number(num2);
+
+        console.log("Difference:", difference);
+        document.getElementById("subResult").innerText = "Difference is: " + difference;
+    }
+
+    // ===== MULTIPLY =====
+    function doMultiply() {
+        let num1 = document.getElementById("mulNum1").value;
+        let num2 = document.getElementById("mulNum2").value;
+
+        let product = Number(num1) * Number(num2);
+
+        console.log("Product:", product);
+        document.getElementById("mulResult").innerText = "Product is: " + product;
+    }
+
+    // ===== DIVIDE =====
+    function doDivide() {
+        let num1 = document.getElementById("divNum1").value;
+        let num2 = document.getElementById("divNum2").value;
+        let num2Value = Number(num2);
+
+        let resultText = "";
+
+        if (num2Value === 0) {
+            resultText = "Error: Cannot divide by zero!";
+            console.log("Division Error: divide by zero");
+        } else {
+            let quotient = Number(num1) / num2Value;
+            resultText = "Quotient is: " + quotient.toFixed(4);
+            console.log("Quotient:", quotient);
+        }
+
+        document.getElementById("divResult").innerText = resultText;
+    }
+</script>
+
+</body>
+
+</html>

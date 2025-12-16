@@ -1,0 +1,174 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ===== GLOBAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    /* New dark gradient background: teal + purple */
+    background:
+        linear-gradient(135deg, rgba(10, 25, 30, 0.95), rgba(40, 10, 50, 0.95)),
+        radial-gradient(circle at top left, #1e3c4c, transparent 60%),
+        radial-gradient(circle at bottom right, #2a0d3f, transparent 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    color: #e0f7fa; /* light cyan for text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; /* prevent horizontal overflow */
+}
+
+/* ===== MAIN HEADING ===== */
+h1 {
+    font-size: 2.6rem;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+    word-break: break-word;
+}
+
+/* ===== FLEX CONTAINER FOR FORMS ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 40px;
+    padding: 30px 25px;
+    border-radius: 20px;
+
+    /* Glass morphism with new color tone */
+    background: rgba(200, 240, 255, 0.07);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(200, 240, 255, 0.15);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(200, 240, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== FORM TITLES ===== */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #80deea; /* teal accent */
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    word-break: break-word;
+}
+
+/* ===== LABELS ===== */
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    align-self: flex-start;
+    word-break: break-word;
+}
+
+/* ===== INPUTS ===== */
+input[type="number"] {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 14px;
+
+    border-radius: 12px;
+    border: none;
+    outline: none;
+
+    background: rgba(0, 50, 60, 0.35); /* dark teal input */
+    color: #e0f7fa;
+    font-size: 1rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+    background: rgba(0, 70, 90, 0.55);
+    box-shadow: 0 0 10px rgba(128, 222, 234, 0.5);
+}
+
+input::placeholder {
+    color: rgba(224, 247, 250, 0.5);
+}
+
+/* ===== BUTTON ===== */
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px 0;
+
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+
+    /* Gradient button with teal-purple tones */
+    background: linear-gradient(135deg, #00bfa5, #6a1b9a);
+    color: #f0f0f0;
+
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 191, 165, 0.45);
+}
+
+/* ===== RESULT TEXT ===== */
+.result {
+    margin-top: 18px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #b2ebf2; /* soft cyan for result */
+    text-align: center;
+    word-break: break-word;
+}
+
+/* ===== DIVIDER ===== */
+hr {
+    width: 80%;
+    margin: 40px auto;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(178, 235, 242, 0.25), transparent);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 25px 20px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
